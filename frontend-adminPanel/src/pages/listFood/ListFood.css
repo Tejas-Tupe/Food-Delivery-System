@@ -1,0 +1,140 @@
+
+
+.food-container {
+  padding: 30px;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.food-header-container {
+  margin-bottom: 25px;
+}
+
+.food-heading {
+  margin: 0 0 5px 0;
+  color: #212529;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.food-subheading {
+  margin: 0;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.food-table-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.food-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.food-th {
+  background-color: #f1f3f5;
+  color: #495057;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.food-tr {
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.2s ease;
+}
+
+.food-tr:hover {
+  background-color: #f8f9fa;
+}
+
+.food-td {
+  padding: 16px 20px;
+  vertical-align: middle;
+  color: #343a40;
+  font-size: 15px;
+}
+
+.food-thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.text-bold {
+  font-weight: 600;
+  color: #212529;
+}
+
+.text-description {
+  color: #6c757d;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-price {
+  font-weight: 600;
+  color: #2b8a3e;
+}
+
+.food-badge {
+  background-color: #e7f5ff;
+  color: #1c7ed6;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.food-loader {
+  text-align: center;
+  padding: 40px;
+  color: #495057;
+  font-size: 16px;
+}
+
+.food-nodata {
+  text-align: center;
+  padding: 40px;
+  color: #868e96;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px dashed #dee2e6;
+}
+
+.delete-btn {
+  background-color: #fff5f5;
+  color: #fa5252;
+  border: 1px solid #ffe3e3;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #fa5252;
+  color: #ffffff;
+  border-color: #fa5252;
+  box-shadow: 0 2px 4px rgba(250, 82, 82, 0.2);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}

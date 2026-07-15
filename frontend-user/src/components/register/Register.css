@@ -1,0 +1,234 @@
+.premium-register-page {
+  background-color: #f8fafc;
+  padding: 3.5rem 0;
+  min-height: 90vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-main-container {
+  width: 100%;
+  max-width: 600px; 
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.register-hero-banner {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.register-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.register-brand-badge .badge-primary { color: #0f172a; }
+.register-brand-badge .badge-secondary { color: #ff5a5f; }
+
+.register-hero-banner h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+}
+
+.register-hero-banner .lead-text {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.register-card-wrap {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+  box-sizing: border-box;
+}
+
+.form-fields-row {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 0.25rem;
+  width: 100%;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.col-half { flex: 1; min-width: 0; }
+
+.form-field-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.input-group-with-icon {
+  display: flex;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group-with-icon:focus-within {
+  border-color: #ff5a5f;
+  box-shadow: 0 0 0 3px rgba(255, 90, 95, 0.1);
+}
+
+.input-icon-addon {
+  color: #94a3b8;
+  padding: 0 0.85rem;
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+}
+
+.premium-input {
+  border: none !important;
+  background-color: transparent;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #0f172a;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.premium-checkbox {
+  width: 17px;
+  height: 17px;
+  accent-color: #ff5a5f;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkbox-label {
+  font-size: 0.88rem;
+  color: #475569;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-inner-divider {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 1.75rem 0;
+}
+
+
+.register-submit-action-btn {
+  width: 100%;
+  background: #ff5a5f;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 20px rgba(255, 90, 95, 0.2);
+  transition: all 0.25s ease;
+}
+
+.register-submit-action-btn:hover {
+  background: #ff4349;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(255, 90, 95, 0.3);
+}
+
+.register-submit-action-btn:active { transform: translateY(0); }
+
+.auth-switch-footer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.switch-auth-trigger {
+  color: #ff5a5f;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+
+.success-btn {
+  background: #28a745 !important;
+  cursor: not-allowed;
+}
+
+.register-success-box {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  background: #eafaf0;
+  color: #28a745;
+  font-weight: 600;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.switch-auth-trigger:hover { color: #ff4349; }
+
+.animate-fade-in {
+  animation: registerFadeFrame 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes registerFadeFrame {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 600px) {
+  .register-card-wrap { padding: 1.5rem; }
+  .form-fields-row { flex-direction: column; gap: 0; }
+}

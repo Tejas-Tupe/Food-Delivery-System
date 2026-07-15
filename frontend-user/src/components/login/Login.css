@@ -1,0 +1,216 @@
+.premium-login-page {
+  background-color: #f8fafc;
+  padding: 4rem 0;
+  min-height: 85vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-main-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+
+.login-hero-banner {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.login-brand-badge .badge-primary { color: #0f172a; }
+.login-brand-badge .badge-secondary { color: #ff5a5f; }
+
+.login-hero-banner h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+}
+
+.login-hero-banner .lead-text {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.login-card-wrap {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+  box-sizing: border-box;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-field-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.label-row-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-context-link {
+  font-size: 0.82rem;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.form-context-link:hover { color: #ff5a5f; }
+
+
+.input-group-with-icon {
+  display: flex;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group-with-icon:focus-within {
+  border-color: #ff5a5f;
+  box-shadow: 0 0 0 3px rgba(255, 90, 95, 0.1);
+}
+
+.input-icon-addon {
+  color: #94a3b8;
+  padding: 0 0.85rem;
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+}
+
+.premium-input {
+  border: none !important;
+  background-color: transparent;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #0f172a;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.premium-checkbox {
+  width: 17px;
+  height: 17px;
+  accent-color: #ff5a5f;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkbox-label {
+  font-size: 0.88rem;
+  color: #475569;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-inner-divider {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 1.75rem 0;
+}
+
+.login-submit-action-btn {
+  width: 100%;
+  background: #ff5a5f;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 20px rgba(255, 90, 95, 0.2);
+  transition: all 0.25s ease;
+}
+
+.login-submit-action-btn:hover {
+  background: #ff4349;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(255, 90, 95, 0.3);
+}
+
+.login-submit-action-btn:active { transform: translateY(0); }
+
+.auth-switch-footer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.switch-auth-trigger {
+  color: #ff5a5f;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+
+.switch-auth-trigger:hover { color: #ff4349; }
+
+
+.animate-fade-in {
+  animation: loginFadeFrame 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes loginFadeFrame {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .login-card-wrap { padding: 1.5rem; }
+}

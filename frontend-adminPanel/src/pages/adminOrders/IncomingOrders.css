@@ -1,0 +1,62 @@
+.customer-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 250px;
+}
+
+.info-address-text {
+  font-size: 0.8rem;
+  color: #686b78;
+  line-height: 1.4;
+}
+
+.info-phone-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #282c3f;
+}
+
+.order-items-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  color: #3d4152;
+}
+
+.item-qty-tag {
+  color: #ff4d4f;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background: #fff1f1;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.25rem;
+}
+
+.status-select-dropdown {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #dcdcdc;
+  background-color: #ffffff;
+  color: #282c3f;
+  transition: border-color 0.15s ease;
+}
+
+.status-select-dropdown:focus {
+  border-color: #ff4d4f;
+}
+
+
+.food-badge.status-paid {
+  background-color: #f4f5f7;
+  color: #4f5366;
+  border: 1px solid #e2e4e8;
+  font-weight: 600;
+  text-transform: uppercase;
+}

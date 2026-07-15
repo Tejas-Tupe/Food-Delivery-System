@@ -1,0 +1,144 @@
+/* ==========================================
+   Main Page
+   ========================================== */
+
+.explore-food-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8f9fb;
+  padding: 2rem 0 4rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ==========================================
+   Hero Section
+   ========================================== */
+
+.explore-food-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;
+}
+
+.explore-food-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #282c3f;
+  margin-bottom: 0.8rem;
+}
+
+.explore-food-hero p {
+  font-size: 1rem;
+  color: #686b78;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   Search Wrapper
+   ========================================== */
+
+.explore-food-search-wrapper {
+  max-width: 950px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================
+   Search Form
+   ========================================== */
+
+.explore-food-form {
+  background: white;
+  padding: 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================
+   Select
+   ========================================== */
+
+.explore-food-select {
+  border: none;
+  background: #f4f4f5;
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #282c3f;
+  font-weight: 500;
+  min-width: 170px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ==========================================
+   Input
+   ========================================== */
+
+.explore-food-input {
+  flex: 1;
+  border: none;
+  background: #f4f4f5;
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #282c3f;
+  outline: none;
+}
+
+.explore-food-input::placeholder {
+  color: #8b8d97;
+}
+
+/* ==========================================
+   Button
+   ========================================== */
+
+.explore-food-btn {
+  border: none;
+  background: #ff4d4f;
+  color: white;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.explore-food-btn:hover {
+  background: #e63b3d;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+@media (max-width: 768px) {
+
+  .explore-food-hero h1 {
+    font-size: 2rem;
+  }
+
+  .explore-food-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .explore-food-select,
+  .explore-food-input,
+  .explore-food-btn {
+    width: 100%;
+  }
+
+  .explore-food-btn {
+    height: 52px;
+  }
+
+}
