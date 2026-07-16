@@ -10,7 +10,7 @@ RUN mvn dependency:go-offline -B
 
 # Copy source code and package the application
 COPY src ./src
-RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests -e -X
 
 # ==========================================
 # Stage 2: Run the application in a lightweight JRE
