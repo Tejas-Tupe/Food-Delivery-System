@@ -3,6 +3,7 @@ import axios from 'axios'
 import './UserOrders.css'
 import { StoreContext } from '../../context/StoreContext'
 import { FaBox, FaMapMarkerAlt, FaPhoneAlt, FaCheckCircle, FaClock } from 'react-icons/fa'
+import api_routes from '../../util/APIConfig'
 
 const UserOrders = () => {
   const { token } = useContext(StoreContext)
@@ -13,7 +14,7 @@ const UserOrders = () => {
   const fetchOrders = async () => {
     try {
       // Replace with your exact backend endpoint URL
-      const response = await axios.get('http://localhost:8080/api/orders/userorders', {
+      const response = await axios.get(api_routes.USER_ALL_ORDERS, {
         headers: { Authorization: `Bearer ${token}` }
       })
       setOrders(response.data)
