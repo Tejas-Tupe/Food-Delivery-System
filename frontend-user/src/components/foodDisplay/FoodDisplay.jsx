@@ -2,19 +2,23 @@ import React, { useContext } from 'react'
 import './FoodDisplay.css'
 import { StoreContext } from '../../context/StoreContext'
 import { FaStar, FaPlus, FaMinus } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
 
 const FoodDisplay = ({ category, searchText }) => {
-  const { foodList, quantities, increaseQty, decreaseQty } = useContext(StoreContext)
+  // Extract foodList and loading state from StoreContext (or handle fallback loading)
+  const { foodList, quantities, increaseQty, decreaseQty, loading } = useContext(StoreContext)
 
-  const filteredFoods = foodList.filter((food) => {
+  // Filter foods based on category and search query
+  const filteredFoods = foodList?.filter((food) => {
     return (
       (category === 'All' ||
         food.category?.trim().toLowerCase() === category?.trim().toLowerCase()
       ) &&
-      food.name.toLowerCase().includes(searchText.toLowerCase())
+      food.name?.toLowerCase().includes((searchText || '').toLowerCase())
     )
   })
+
+  // Determine if backend is currently sleeping / fetching data
+  const isLoading = loading || !foodList || foodList.length === 0;
 
   return (
     <section className='food-display'>
@@ -24,23 +28,39 @@ const FoodDisplay = ({ category, searchText }) => {
       </div>
 
       <div className='food-grid'>
-        {filteredFoods?.map((food, index) => {
-          const currentQty = quantities[food.id] || 0
+        {/* SHOW SKELETON LOADERS WHILE BACKEND WAKES UP */}
+        {isLoading ? (
+          Array.from({ length: 8 }).map((_, idx) => (
+            <div className='food-card skeleton-card' key={idx}>
+              <div className='skeleton-image' />
+              <div className='food-info'>
+                <div className='skeleton-title' />
+                <div className='skeleton-text' />
+                <div className='skeleton-text short' />
+                <div className='skeleton-footer' />
+              </div>
+            </div>
+          ))
+        ) : filteredFoods?.length === 0 ? (
+          /* NO MATCHING RESULTS STATE */
+          <div className='no-food-found'>
+            <p>No dishes found matching your criteria.</p>
+          </div>
+        ) : (
+          /* ACTUAL FOOD CARDS */
+          filteredFoods.map((food, index) => {
+            const foodId = food.id || food._id
+            const currentQty = quantities[foodId] || 0
 
-          return (
-            // <Link
-            //   to={`/food/${food.id}`}
-            //   className='food-card-link'
-            //   key={food.id || index}
-            // >
-              <div className='food-card'>
-                
+            return (
+              <div className='food-card' key={foodId || index}>
                 {/* IMAGE CONTAINER */}
                 <div className='food-image-container'>
                   <img
                     src={food.imageUrl}
                     alt={food.name}
                     className='food-image'
+                    loading="lazy"
                   />
 
                   {/* FLOATING ACTION COUNTER */}
@@ -50,7 +70,7 @@ const FoodDisplay = ({ category, searchText }) => {
                       onClick={(e) => {
                         e.preventDefault()
                         e.stopPropagation()
-                        increaseQty(food.id)
+                        increaseQty(foodId)
                       }}
                     >
                       <FaPlus />
@@ -63,11 +83,11 @@ const FoodDisplay = ({ category, searchText }) => {
                         e.stopPropagation()
                       }}
                     >
-                      <button onClick={() => decreaseQty(food.id)} className='card-counter-btn'>
+                      <button onClick={() => decreaseQty(foodId)} className='card-counter-btn'>
                         <FaMinus />
                       </button>
                       <span className='card-counter-value'>{currentQty}</span>
-                      <button onClick={() => increaseQty(food.id)} className='card-counter-btn'>
+                      <button onClick={() => increaseQty(foodId)} className='card-counter-btn'>
                         <FaPlus />
                       </button>
                     </div>
@@ -95,11 +115,10 @@ const FoodDisplay = ({ category, searchText }) => {
                     <h5 className='food-price'>₹{food.price}</h5>
                   </div>
                 </div>
-
               </div>
-            //</ Link>
-          )
-        })}
+            )
+          })
+        )}
       </div>
     </section>
   )
