@@ -1,11 +1,14 @@
-import React, { useContext } from 'react'
-import './FoodDisplay.css'
+import React, { useContext, useState } from 'react'
 import { StoreContext } from '../../context/StoreContext'
 import { FaStar, FaPlus, FaMinus } from 'react-icons/fa'
-
+import FoodDetailModal from './FoodDetailModal.jsx'
+import './FoodDisplay.css'
 const FoodDisplay = ({ category, searchText }) => {
-  // Extract foodList and loading state from StoreContext (or handle fallback loading)
+  // Extract foodList and loading state from StoreContext
   const { foodList, quantities, increaseQty, decreaseQty, loading } = useContext(StoreContext)
+  
+  // State to track which food card was clicked
+  const [selectedFood, setSelectedFood] = useState(null)
 
   // Filter foods based on category and search query
   const filteredFoods = foodList?.filter((food) => {
@@ -18,7 +21,7 @@ const FoodDisplay = ({ category, searchText }) => {
   })
 
   // Determine if backend is currently sleeping / fetching data
-  const isLoading = loading || !foodList || foodList.length === 0;
+  const isLoading = loading || !foodList || foodList.length === 0
 
   return (
     <section className='food-display'>
@@ -47,13 +50,26 @@ const FoodDisplay = ({ category, searchText }) => {
             <p>No dishes found matching your criteria.</p>
           </div>
         ) : (
-          /* ACTUAL FOOD CARDS */
+          /* ACTUAL FOOD CARDS - CLICKABLE TO OPEN DETAIL MODAL */
           filteredFoods.map((food, index) => {
             const foodId = food.id || food._id
             const currentQty = quantities[foodId] || 0
 
             return (
-              <div className='food-card' key={foodId || index}>
+              <div
+                className='food-card'
+                key={foodId || index}
+                onClick={() => setSelectedFood(food)}
+                style={{ cursor: 'pointer' }}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setSelectedFood(food)
+                  }
+                }}
+              >
                 {/* IMAGE CONTAINER */}
                 <div className='food-image-container'>
                   <img
@@ -76,8 +92,8 @@ const FoodDisplay = ({ category, searchText }) => {
                       <FaPlus />
                     </button>
                   ) : (
-                    <div 
-                      className='food-card-counter' 
+                    <div
+                      className='food-card-counter'
                       onClick={(e) => {
                         e.preventDefault()
                         e.stopPropagation()
@@ -98,10 +114,6 @@ const FoodDisplay = ({ category, searchText }) => {
                 <div className='food-info'>
                   <div className='food-header'>
                     <h4>{food.name}</h4>
-                    <div className='food-rating'>
-                      <FaStar />
-                      <span>4.5</span>
-                    </div>
                   </div>
 
                   <p className='food-description'>
@@ -120,6 +132,13 @@ const FoodDisplay = ({ category, searchText }) => {
           })
         )}
       </div>
+
+      {/* DETAILED FOOD WINDOW MODAL */}
+      <FoodDetailModal
+        food={selectedFood}
+        onClose={() => setSelectedFood(null)}
+        onSelectFood={(clickedFood) => setSelectedFood(clickedFood)}
+      />
     </section>
   )
 }

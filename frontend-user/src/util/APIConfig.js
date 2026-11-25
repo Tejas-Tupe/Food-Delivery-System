@@ -5,7 +5,7 @@ const api_routes = {
     LOGIN: `${url}/login`,
     
     ALL_FOODS: `${url}/foods`,
-    GET_FOOD_BY_ID: `${url}/`,
+    GET_FOOD_BY_ID: `${url}/foods/`,
 
     ADD_TO_CART: `${url}/cart`,
     GET_CART: `${url}/cart`,

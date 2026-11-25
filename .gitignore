@@ -5,10 +5,10 @@
 *.env.master.local
 *.env.sample
 
-foodisapi/target/
-foodisapi/bin/
-foodisapi/*.jar
-foodisapi/*.war
+foodisapi/**/target/
+foodisapi/**/bin/
+foodisapi/**/*.jar
+foodisapi/**/*.war
 
 foodisapi/HELP.md
 foodisapi/.mvn/

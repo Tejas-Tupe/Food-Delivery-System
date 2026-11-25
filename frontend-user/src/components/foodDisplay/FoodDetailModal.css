@@ -1,0 +1,423 @@
+.food-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: 1rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  .food-modal-container {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    max-height: 90vh;
+    background: #ffffff;
+    border-radius: 22px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .food-modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 20;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.92);
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: all 0.2s ease;
+  }
+  
+  .food-modal-close-btn:hover {
+    background: #ff5a5f;
+    color: #ffffff;
+    transform: scale(1.05);
+  }
+  
+  .food-modal-scroll-body {
+    overflow-y: auto;
+    max-height: 90vh;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+  
+  /* Hero Banner */
+  .food-modal-hero {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background: #f1f5f9;
+  }
+  
+  .food-modal-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .food-modal-category-pill {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    background: rgba(15, 23, 42, 0.85);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  /* Content Body */
+  .food-modal-content {
+    padding: 1.75rem;
+  }
+  
+  .food-modal-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+  }
+  
+  .food-modal-title {
+    margin: 0;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.4px;
+  }
+  
+  .food-modal-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff5a5f;
+    white-space: nowrap;
+  }
+  
+  /* Badges */
+  .food-modal-meta-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.35rem;
+  }
+  
+  .meta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+  }
+  
+  .meta-badge .meta-icon {
+    color: #ff5a5f;
+  }
+  
+  /* Description */
+  .food-modal-desc-box {
+    margin-bottom: 1.35rem;
+  }
+  
+  .food-modal-desc-box h4 {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  
+  .food-modal-desc-box p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #64748b;
+  }
+  
+  /* Cooking Instructions */
+  .food-modal-note-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .food-modal-note-box label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #475569;
+  }
+  
+  .food-modal-note-input {
+    padding: 0.7rem 0.95rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .food-modal-note-input:focus {
+    border-color: #ff5a5f;
+    box-shadow: 0 0 0 3px rgba(255, 90, 95, 0.1);
+  }
+  
+  /* Primary Add / Quantity Action Bar */
+  .food-modal-action-bar {
+    margin-bottom: 1.75rem;
+  }
+  
+  .modal-primary-add-btn {
+    width: 100%;
+    background: #ff5a5f;
+    color: #ffffff;
+    border: none;
+    padding: 0.95rem 1.25rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    box-shadow: 0 8px 20px rgba(255, 90, 95, 0.22);
+    transition: all 0.2s ease;
+  }
+  
+  .modal-primary-add-btn:hover {
+    background: #ff4349;
+    transform: translateY(-1px);
+  }
+  
+  .modal-qty-control-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff5f5;
+    border: 1px solid #fecdd3;
+    padding: 0.65rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .modal-qty-stepper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #ffffff;
+    border: 1px solid #ff5a5f;
+    border-radius: 10px;
+    padding: 0.35rem 0.65rem;
+  }
+  
+  .modal-qty-stepper button {
+    background: none;
+    border: none;
+    color: #ff5a5f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    padding: 0.2rem;
+  }
+  
+  .modal-qty-stepper span {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #0f172a;
+    min-width: 20px;
+    text-align: center;
+  }
+  
+  .modal-subtotal-pill {
+    font-size: 0.95rem;
+    color: #334155;
+  }
+  
+  .modal-subtotal-pill strong {
+    color: #0f172a;
+    font-size: 1.05rem;
+  }
+  
+  /* Appended Recommendations List */
+  .food-modal-recommendations {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+  }
+  
+  .rec-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+  }
+  
+  .rec-section-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+  
+  .rec-section-header span {
+    font-size: 0.78rem;
+    color: #94a3b8;
+  }
+  
+  .rec-food-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .rec-food-item-card {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.65rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .rec-food-item-card:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  }
+  
+  .rec-food-thumb {
+    width: 62px;
+    height: 62px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  .rec-food-details {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .rec-food-cat {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #94a3b8;
+  }
+  
+  .rec-food-details h5 {
+    margin: 0.15rem 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .rec-food-price {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #475569;
+  }
+  
+  .rec-add-btn {
+    background: #ffffff;
+    border: 1px solid #ff5a5f;
+    color: #ff5a5f;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 0.2s;
+  }
+  
+  .rec-add-btn:hover {
+    background: #ff5a5f;
+    color: #ffffff;
+  }
+  
+  .rec-mini-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: #ff5a5f;
+    color: #ffffff;
+    padding: 0.35rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+  
+  .rec-mini-counter button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 0.72rem;
+    padding: 0;
+  }
+  
+  @keyframes modalPop {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  .animate-modal-pop {
+    animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  @media (max-width: 600px) {
+    .food-modal-hero {
+      height: 200px;
+    }
+    .food-modal-content {
+      padding: 1.25rem;
+    }
+    .food-modal-title {
+      font-size: 1.35rem;
+    }
+  }
